@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f3f3;
 }
 
 code {
@@ -19,4 +20,35 @@ code {
 
 a {
   text-decoration: none;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.imgs-multiples {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.border-r-1 {
+  border-radius: 10px 0px 0px 0px;
+}
+
+.border-r-2 {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.border-r-3 {
+  border-radius: 0px 0px 0px 10px;
+}
+
+.border-r-4 {
+  border-radius: 0px 0px 10px 0px;
 }
