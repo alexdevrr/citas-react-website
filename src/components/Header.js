@@ -35,6 +35,7 @@ const ContenedorMenu = styled.ul`
   align-items: center;
   padding: 0px;
   justify-content: center;
+
   @media screen and (min-width: 468px) {
     flex-direction: row;
     align-items: center;

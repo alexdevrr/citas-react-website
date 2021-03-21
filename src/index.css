@@ -35,6 +35,11 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  transition: 0.45s ease-in-out;
+}
+
+.imgs-multiples :hover {
+  background-color: #313131;
 }
 
 .border-r-1 {
