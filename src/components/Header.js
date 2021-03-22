@@ -1,12 +1,5 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-
-const ComponenteHeader = styled.header`
-  background-color: #f9f3f3;
-  display: flex;
-  width: 100%;
-
-  box-shadow: 0 5px 5px 0 rgb(0 0 0 / 20%), 0 0 0 1px #f9f3f3;
-`;
 
 const Container = styled.div`
   width: 1200px;
@@ -25,7 +18,6 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   text-align: center;
-  color: #f25287;
   font-family: 'Patrick Hand', cursive;
 `;
 
@@ -48,7 +40,7 @@ const Listado = styled.li`
 `;
 
 const Enlace = styled.a`
-  color: #f25287;
+  /* color: #f25287; */
   font-family: 'Montserrat', sans-serif;
   transition: 400ms;
 
@@ -58,23 +50,51 @@ const Enlace = styled.a`
 `;
 
 const Header = () => {
+  const [activetransparent, setActiveTransparent] = useState(false);
+  const [menu, setMenu] = useState(true);
+
+  const menuTransparent = () => {
+    if (window.scrollY >= 80) {
+      setActiveTransparent(true);
+    } else {
+      setActiveTransparent(false);
+    }
+  };
+
+  const menuVisible = () => {
+    if (window.scrollY >= 750) {
+      setMenu(false);
+    } else {
+      setMenu(true);
+    }
+  };
+
+  window.addEventListener('scroll', menuTransparent);
+  window.addEventListener('scroll', menuVisible);
+
   return (
-    <ComponenteHeader>
-      <Container>
-        <Title>HappyPet 🐶</Title>
-        <ContenedorMenu>
-          <Listado>
-            <Enlace href="#">Mascotas</Enlace>
-          </Listado>
-          <Listado>
-            <Enlace href="#">Sobre nosotros</Enlace>
-          </Listado>
-          <Listado>
-            <Enlace href="#">Opiniones</Enlace>
-          </Listado>
-        </ContenedorMenu>
-      </Container>
-    </ComponenteHeader>
+    <>
+      {menu ? (
+        <div className={activetransparent ? 'header' : 'header active'}>
+          <Container>
+            <div className="animate__animated animate__jello">
+              <Title>HappyPet 🐶</Title>
+            </div>
+            <ContenedorMenu>
+              <Listado>
+                <Enlace href="#">Inicio</Enlace>
+              </Listado>
+              <Listado>
+                <Enlace href="#">Mascotas</Enlace>
+              </Listado>
+              <Listado>
+                <Enlace href="#">Sobre nosotros</Enlace>
+              </Listado>
+            </ContenedorMenu>
+          </Container>
+        </div>
+      ) : null}
+    </>
   );
 };
 
