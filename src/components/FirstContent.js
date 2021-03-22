@@ -27,7 +27,7 @@ const ContenedorCards = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding-top: 1rem;
-  height: 400px;
+  height: 300px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -40,7 +40,7 @@ const Card = styled.div`
   background-color: #313131;
   color: white;
   flex: 0 1 calc(100% - 1rem);
-  height: 100%;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 5px 5px 0 rgb(0 0 0 / 20%), 0 0 0 1px #f9f3f3;
   margin-bottom: 1rem;
@@ -52,29 +52,12 @@ const Card = styled.div`
     flex: 0 1 calc(33% - 1rem);
     /* height: 441px; */
     margin-bottom: unset;
+    height: 300px;
   }
 
   /* &:hover {
     transform: scale(1.02);
   } */
-`;
-
-const CardMultiple = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0;
-  flex: 1 0 calc(25%);
-
-  /* height: 100%; */
-`;
-
-const Imagen = styled.div`
-  flex: 1 0 calc(25%);
-
-  @media screen and (min-width: 768px) {
-    flex: 1 0 calc(50%);
-  }
 `;
 
 const ContenedorBtn = styled.div`
