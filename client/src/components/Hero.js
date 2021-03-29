@@ -25,6 +25,7 @@ const ContenedorInfoAndBoton = styled.div`
 const TextoInformacion = styled.h1`
   color: white;
   font-family: 'Montserrat', cursive;
+  text-align: center;
 `;
 
 const BotonHero = styled.button`

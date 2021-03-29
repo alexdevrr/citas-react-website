@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const ContenedorFirstContent = styled.div``;
-
 const Contenedor = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 3rem 2rem 3rem;
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
 `;
 
 const TdTuMascota = styled.div`
@@ -27,7 +25,7 @@ const ContenedorCards = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding-top: 1rem;
-  height: 300px;
+  height: auto;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -67,15 +65,12 @@ const ContenedorBtn = styled.div`
   align-items: center;
   position: absolute;
   width: 100%;
-  /* 
-  @media screen and (min-width: 768px) {
-  } */
 `;
 
 const BtnNaranja = styled.button`
   font-family: 'Patrick Hand', cursive;
   background-color: transparent;
-  min-width: 200px;
+  min-width: 100px;
   color: white;
   padding: 0.5rem 0rem 0.5rem 0rem;
   border-radius: 5px;
@@ -99,6 +94,10 @@ const BtnNaranja = styled.button`
     background-color: #d15026;
     border: 1px solid #fff;
     color: white;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-width: 200px;
   }
 `;
 
@@ -130,7 +129,7 @@ const FirstContent = () => {
   const [activecards, setActiveCards] = useState(false);
 
   const animacionCards = () => {
-    if (window.scrollY >= 210) {
+    if (window.scrollY >= 200) {
       setActiveCards(true);
     }
   };
@@ -138,54 +137,52 @@ const FirstContent = () => {
   window.addEventListener('scroll', animacionCards);
 
   return (
-    <ContenedorFirstContent>
-      <Contenedor>
-        <TdTuMascota>
-          <TuMascota>Tu mascota</TuMascota>
-        </TdTuMascota>
+    <Contenedor>
+      <TdTuMascota>
+        <TuMascota>Tu mascota</TuMascota>
+      </TdTuMascota>
 
-        {activecards && (
-          <div className="animate__animated animate__bounceInUp">
-            <ContenedorCards>
-              <Card
-                onMouseEnter={() => setBtnOrange(true)}
-                onMouseLeave={() => setBtnOrange(false)}
-              >
-                {/* Botón */}
-                <ContenedorBtn>
-                  {btnorange && <BtnNaranja>Perro</BtnNaranja>}
-                </ContenedorBtn>
-                <img className="img" alt="img-pet2" src="/images/pet2.jpeg" />
-              </Card>
+      {activecards && (
+        <div className="animate__animated animate__bounceInUp">
+          <ContenedorCards>
+            <Card
+              onMouseEnter={() => setBtnOrange(true)}
+              onMouseLeave={() => setBtnOrange(false)}
+            >
+              {/* Botón */}
+              <ContenedorBtn>
+                {btnorange && <BtnNaranja>Perro</BtnNaranja>}
+              </ContenedorBtn>
+              <img className="img" alt="img-pet2" src="/images/pet2.jpeg" />
+            </Card>
 
-              <Card
-                onMouseEnter={() => setBtnBlue(true)}
-                onMouseLeave={() => setBtnBlue(false)}
-              >
-                {/* Botón carga condicional*/}
-                <ContenedorBtn>
-                  {btnblue && <BtnAzul>Gato</BtnAzul>}
-                </ContenedorBtn>
-                <img className="img" alt="img-pet3" src="/images/pet3.jpeg" />
-              </Card>
+            <Card
+              onMouseEnter={() => setBtnBlue(true)}
+              onMouseLeave={() => setBtnBlue(false)}
+            >
+              {/* Botón carga condicional*/}
+              <ContenedorBtn>
+                {btnblue && <BtnAzul>Gato</BtnAzul>}
+              </ContenedorBtn>
+              <img className="img" alt="img-pet3" src="/images/pet3.jpeg" />
+            </Card>
 
-              {/* Cards multiples */}
+            {/* Cards multiples */}
 
-              <Card
-                onMouseEnter={() => setBtnGreen(true)}
-                onMouseLeave={() => setBtnGreen(false)}
-              >
-                <ContenedorBtn>
-                  {btngreen && <BtnVerde>Otras Especies</BtnVerde>}
-                </ContenedorBtn>
+            <Card
+              onMouseEnter={() => setBtnGreen(true)}
+              onMouseLeave={() => setBtnGreen(false)}
+            >
+              <ContenedorBtn>
+                {btngreen && <BtnVerde>Otras Especies</BtnVerde>}
+              </ContenedorBtn>
 
-                <img className="img" alt="img-pet4" src="/images/pet5.jpeg" />
-              </Card>
-            </ContenedorCards>
-          </div>
-        )}
-      </Contenedor>
-    </ContenedorFirstContent>
+              <img className="img" alt="img-pet4" src="/images/pet5.jpeg" />
+            </Card>
+          </ContenedorCards>
+        </div>
+      )}
+    </Contenedor>
   );
 };
 

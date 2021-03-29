@@ -51,7 +51,6 @@ const Enlace = styled.a`
 
 const Header = () => {
   const [activetransparent, setActiveTransparent] = useState(false);
-  const [menu, setMenu] = useState(true);
 
   const menuTransparent = () => {
     if (window.scrollY >= 80) {
@@ -61,39 +60,28 @@ const Header = () => {
     }
   };
 
-  const menuVisible = () => {
-    if (window.scrollY >= 750) {
-      setMenu(false);
-    } else {
-      setMenu(true);
-    }
-  };
-
   window.addEventListener('scroll', menuTransparent);
-  window.addEventListener('scroll', menuVisible);
 
   return (
     <>
-      {menu ? (
-        <div className={activetransparent ? 'header' : 'header active'}>
-          <Container>
-            <div className="animate__animated animate__jello">
-              <Title>HappyPet 🐶</Title>
-            </div>
-            <ContenedorMenu>
-              <Listado>
-                <Enlace href="#">Inicio</Enlace>
-              </Listado>
-              <Listado>
-                <Enlace href="#">Mascotas</Enlace>
-              </Listado>
-              <Listado>
-                <Enlace href="#">Sobre nosotros</Enlace>
-              </Listado>
-            </ContenedorMenu>
-          </Container>
-        </div>
-      ) : null}
+      <div className={activetransparent ? 'header' : 'header active'}>
+        <Container>
+          <div className="animate__animated animate__jello">
+            <Title>HappyPet 🐶</Title>
+          </div>
+          <ContenedorMenu>
+            <Listado>
+              <Enlace href="#">Inicio</Enlace>
+            </Listado>
+            <Listado>
+              <Enlace href="#">Mascotas</Enlace>
+            </Listado>
+            <Listado>
+              <Enlace href="#">Sobre nosotros</Enlace>
+            </Listado>
+          </ContenedorMenu>
+        </Container>
+      </div>
     </>
   );
 };
