@@ -1,23 +1,13 @@
-import FirstContent from './components/FirstContent';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import SecondContent from './components/SecondContent';
-import Interes from './components/Interes';
-import Footer from './components/Footer';
-import Servicios from './components/Servicios';
+import MenuProvider from './components/context/MenuContext';
+import AppRouter from './routes/AppRouter';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-
-      <FirstContent />
-      <Servicios />
-      <SecondContent />
-      <Interes />
-      <Footer />
-    </div>
+    <MenuProvider>
+      <div className="App">
+        <AppRouter />
+      </div>
+    </MenuProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const Contenedor = styled.div`
@@ -8,7 +8,7 @@ const Contenedor = styled.div`
   margin-bottom: 3rem;
 `;
 
-const TdTuMascota = styled.div`
+export const TdTuMascota = styled.div`
   border-bottom-width: 5px;
   border-bottom-style: solid;
   border-bottom-color: #dddddd;
@@ -122,6 +122,8 @@ const BtnVerde = styled(BtnNaranja)`
 `;
 
 const FirstContent = () => {
+  const inputRef = useRef();
+
   const [btnorange, setBtnOrange] = useState(false);
   const [btnblue, setBtnBlue] = useState(false);
   const [btngreen, setBtnGreen] = useState(false);
@@ -134,10 +136,16 @@ const FirstContent = () => {
     }
   };
 
-  window.addEventListener('scroll', animacionCards);
+  // Evita consumir muchos recursos
+  useEffect(() => {
+    window.addEventListener('scroll', animacionCards);
+    return () => {
+      window.removeEventListener('scroll', animacionCards);
+    };
+  }, []);
 
   return (
-    <Contenedor>
+    <Contenedor ref={inputRef}>
       <TdTuMascota>
         <TuMascota>Tu mascota</TuMascota>
       </TdTuMascota>

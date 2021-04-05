@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -20,6 +21,10 @@ code {
 
 a {
   text-decoration: none;
+}
+
+.pt-4 {
+  padding-top: 4rem;
 }
 
 .img {
@@ -61,14 +66,22 @@ a {
   display: flex;
   width: 100%;
   /* position: fixed; */
-  transition: background-color 300ms;
+  transition: background-color 0.3s;
   /* Mantiene el header como quiero */
   position: fixed;
   z-index: 1;
+  padding: 1rem;
 }
 
 .header.active {
+  /* background-color: #f25287; */
   background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
 }
 
 .header.active a:hover {
@@ -84,11 +97,13 @@ a {
 }
 
 .header.active a {
-  color: #fff;
+  color: #f25287;
+  /* color: #fff; */
 }
 
 .header.active h1 {
-  color: #fff;
+  color: #f25287;
+  /* color: #fff; */
 }
 
 .h1 {
@@ -176,4 +191,89 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+/* Header botones */
+.enlace {
+  font-family: 'Montserrat', sans-serif;
+  transition: 400ms;
+}
+
+.enlace:hover {
+  color: #313131;
+}
+
+li {
+  list-style: none;
+}
+
+.menu-bars {
+  padding: 1rem;
+  color: #f25287 !important;
+}
+
+.navbar {
+  background-color: #f25287;
+  display: flex;
+  width: 100%;
+  /* position: fixed; */
+  transition: background-color 0.3s;
+  /* Mantiene el header como quiero */
+  position: fixed;
+  z-index: 1;
+}
+
+.nav-menu {
+  background-color: #f25287;
+  width: 100%;
+  display: flex;
+  height: auto;
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  left: -100%;
+  transition: 0.7s;
+}
+
+.nav-menu.show {
+  left: 0;
+  transition: 0.35s;
+  padding-top: 0.5rem;
+}
+
+.navbar-header {
+  background-color: #f9f3f3;
+  display: flex;
+  width: 100%;
+  /* position: fixed; */
+  transition: background-color 400ms;
+  /* Mantiene el header como quiero */
+  position: fixed;
+  z-index: 1;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-header.active {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-header {
+    display: none;
+  }
+}
+
+.rutas-navbar {
+  color: white;
+}
+
+.li {
+  padding: 10px;
+}
+
+.padding-0 {
+  padding: 0;
 }
