@@ -39,6 +39,7 @@ const BotonHero = styled.button`
   border: 1px solid #fff;
   cursor: pointer;
   font-size: 19px;
+  margin-top: 1rem;
 
   &:focus {
     outline: none;

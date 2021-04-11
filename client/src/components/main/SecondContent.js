@@ -48,6 +48,7 @@ const Etiqueta = styled.div`
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 5px 5px 0 rgb(0 0 0 / 20%), 0 0 0 1px #f25287;
+  margin-top: -0.5rem;
 `;
 
 const Span = styled.span`

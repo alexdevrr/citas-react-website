@@ -85,7 +85,8 @@ a {
 }
 
 .header.active a:hover {
-  color: #f25287;
+  /* Hover para el menu transparente */
+  color: #313131;
 }
 
 .header a {
@@ -258,6 +259,7 @@ li {
 
 .navbar-header.active {
   background-color: transparent;
+  color: #313131;
 }
 
 @media screen and (min-width: 768px) {
