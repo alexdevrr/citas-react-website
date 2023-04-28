@@ -63,22 +63,32 @@ const Header = () => {
   return (
     <div className={activetransparent ? 'header' : 'header active'}>
       <Container>
-        <div className="animate__animated animate__jello">
+        <div className='animate__animated animate__jello'>
           <Title>HappyPet 🐶</Title>
         </div>
         <ContenedorMenu>
           <Listado>
-            <Link to="/" className="enlace">
+            <Link to='/' className='enlace'>
               Inicio
+            </Link> 
+          </Listado>
+          <Listado>
+            <Link to='/usuarios' className='enlace'>
+             Usuarios
             </Link>
           </Listado>
           <Listado>
-            <Link to="/mascotas" className="enlace">
+            <Link to='/mascotas' className='enlace'>
               Mascotas
             </Link>
           </Listado>
           <Listado>
-            <Link to="/" className="enlace">
+            <Link to='/membresias' className='enlace'>
+              Membresias
+            </Link>
+          </Listado>
+          <Listado>
+            <Link to='/' className='enlace'>
               Sobre nosotros
             </Link>
           </Listado>

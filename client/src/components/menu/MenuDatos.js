@@ -11,6 +11,12 @@ const MenuDatos = [
     // icon: <AiIcons.AiFillHome />,
     // cName: 'nav-text',
   },
+  {
+    title: 'Membresia',
+    path: '/membresia',
+    // icon: <AiIcons.AiFillHome />,
+    // cName: 'nav-text',
+  },
 ];
 
 export default MenuDatos;
